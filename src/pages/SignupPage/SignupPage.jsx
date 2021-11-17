@@ -23,7 +23,7 @@ export default function SignUpPage(props){
   function handleChange(e){
     setState({
       ...state,
-      [e.target.value]: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
@@ -60,7 +60,8 @@ export default function SignUpPage(props){
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="teal" textAlign="center">
-          <Image src="https://i.imgur.com/s4LrnlU.png" /> Sign Up
+          <Image src="https://img.icons8.com/color/48/000000/dungeons-and-dragons.png" /> Sign Up
+          
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
