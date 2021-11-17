@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import userService from "../../utils/userService";
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function SignUpPage(props){
-  const [error, setError] = useState('')
+
+  const navigate = useNavigate();
+
+  const [error, setError] = useState('');
   const [state, setState] = useState({
     username:'',
     email:'',
@@ -39,7 +43,7 @@ export default function SignUpPage(props){
     try {
       await userService.signup(formData) 
       props.handleSignUpOrLogin() 
-      // navigate('/')
+      navigate('/')
     } catch(err){
       setError(err.message)
     }
