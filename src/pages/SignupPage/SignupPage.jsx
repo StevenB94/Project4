@@ -96,6 +96,7 @@ export default function SignUpPage(props){
               onChange={handleChange}
               required
             />
+            
             <Form.Field>
               <Form.Input
                 type="file"
