@@ -59,7 +59,7 @@ export default function SignUpPage(props){
     return (
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="teal" textAlign="center">
+        <Header as="h2" color="black" textAlign="center">
           <Image src="https://img.icons8.com/color/48/000000/dungeons-and-dragons.png" /> Sign Up
           
         </Header>
