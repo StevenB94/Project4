@@ -1,8 +1,17 @@
 #header{
   background-color: #222831;
+  color: #FD7014;
 }
 
 body{
   background-color: #222831;
-  color: aqua;
+  color: #FD7014;
+}
+
+a{
+  color: #FD7014;
+}
+
+.ui.header {
+  color: #FD7014;
 }

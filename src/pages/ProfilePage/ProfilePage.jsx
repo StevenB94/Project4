@@ -74,6 +74,13 @@ export default function ProfilePage(props) {
           <ProfileBio user={user} />
         </Grid.Column>
       </Grid.Row>
+      <Grid.Row columns={2}>
+        <Grid.Column>
+          <input type="text" name="" id=""></input>
+          <br />
+          <button>Update</button>
+        </Grid.Column>
+      </Grid.Row>
       <Grid.Row columns={1}>
         <Grid.Column style={{ maxWidth: 750 }}>
           <PostFeed
