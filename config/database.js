@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  process.env.DATABASE_URL, // < replace with your database name!
-)
+mongoose.connect(process.env.DATABASE_URL,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 
@@ -13,3 +14,4 @@ db.on("connected", function () {
 db.on('error', function(err){
   console.log(`Mongodb error: ${err}`)
 })
+
