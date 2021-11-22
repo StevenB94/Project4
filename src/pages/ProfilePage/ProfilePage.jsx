@@ -9,6 +9,7 @@ import userService from "../../utils/userService";
 import * as likesApi from "../../utils/likesApi";
 
 export default function ProfilePage(props) {
+    console.log(props, "on line 12")
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
@@ -71,14 +72,12 @@ export default function ProfilePage(props) {
     <Grid celled container stackable>
       <Grid.Row columns={1}>
         <Grid.Column>
-          <ProfileBio user={user} />
+          <ProfileBio setUser={setUser} user={props.user} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row columns={2}>
         <Grid.Column>
-          <input type="text" name="" id=""></input>
-          <br />
-          <button>Update</button>
+         {props.user.bio && props.user.bio}
         </Grid.Column>
       </Grid.Row>
       <Grid.Row columns={1}>

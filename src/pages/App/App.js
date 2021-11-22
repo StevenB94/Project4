@@ -7,6 +7,7 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import userService from "../../utils/userService";
 import Feed from "../Feed/Feed";
 import Layout from "../Layout/Layout";
+import { render } from "@testing-library/react";
 
 function App() {
   // decode our jwt token
@@ -29,7 +30,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Layout user={user} handleLogout={handleLogout} />}
+          element={<Layout user={user} setUser={setUser} handleLogout={handleLogout} />}
         >
           <Route index element={<Feed user={user} />}></Route>
           <Route

@@ -53,10 +53,27 @@ function getProfile(username) {
   });
 }
 
+function updateBio(bio){
+  return fetch(BASE_URL + "updateBio", {
+    method: "POST",
+    headers: new Headers({
+       "Content-Type": "application/json",
+      "Authorization": `Bearer ${tokenService.getToken()}`
+  }),
+    body: JSON.stringify({bio}), // < taking a js object and turning into json to send to the server
+  })
+    .then((res) => {
+      // Valid login if we have a status of 2xx (res.ok)
+      if (res.ok) return res.json();
+      throw new Error("Bad Credentials!");
+    })
+}
+
 export default {
   signup, 
   getUser,
   logout,
   login,
   getProfile,
+  updateBio,
 };

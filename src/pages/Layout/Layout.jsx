@@ -2,7 +2,7 @@ import { Grid } from "semantic-ui-react";
 import { Outlet } from "react-router-dom";
 import Header from "../../components/Header/Header";
 
-export default function Layout({user, handleLogout}) {
+export default function Layout({user, setUser, handleLogout}) {
   return (
     <Grid>
       <Grid.Row>
@@ -12,7 +12,7 @@ export default function Layout({user, handleLogout}) {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>
-          <Outlet />
+          <Outlet setUser={setUser}  />
         </Grid.Column>
       </Grid.Row>
     </Grid>

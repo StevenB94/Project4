@@ -9,8 +9,21 @@ const s3 = new S3();
 module.exports = {
   signup,
   login,
-  profile
+  profile,
+  updateBio
 };
+
+async function updateBio(req, res){
+  try{
+    const newProfile = await User.where({ _id: req.user.id }).update({ $set: { bio: req.body.bio }})
+    res.status(200).json({data: newProfile})
+  
+  } catch(err){
+    console.log(err)
+    res.status(400).json({err})
+  }
+}
+
 
 async function profile(req, res){
   try {

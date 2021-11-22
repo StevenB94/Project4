@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Grid, Segment } from "semantic-ui-react";
+import userService from "../../utils/userService";
 
-export default function ProfileBio({ user }) {
+export default function ProfileBio({ user, setUser }) {
+    const [bio, setBio] = useState("")
+    async function submitHandler(){
+        console.log("click")
+        console.log(bio)
+        const data = await userService.updateBio(bio)
+        console.log(data)
+        setUser({
+            ...user,
+            bio: bio
+        })
+        console.log(user)
+    }
+    function changeHandler(e){
+        const { value } = e.target
+        setBio(value)
+    }
+    
   return (
     <Grid textAlign="center" columns={2} className="Profile">
       <Grid.Row>
@@ -21,7 +39,18 @@ export default function ProfileBio({ user }) {
             <h3>{user.username}</h3>
           </Segment>
           <Segment>
-            <span> Bio: {user.bio}</span>
+            <span> Bio: </span>
+            <form > 
+                <input 
+                    placeholder={user.bio} 
+                    type="text" 
+                    onChange={changeHandler} 
+                    value = {bio}
+                    
+                />
+            </form>
+            <button onClick={submitHandler}>SAVE</button>
+            <h4>{user.bio ? user.bio:"no bio yet"}</h4>
           </Segment>
         </Grid.Column>
       </Grid.Row>
