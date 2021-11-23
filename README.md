@@ -36,7 +36,7 @@ This site is for the Dungeons and Dragons player, this site allows you to create
 [Trello Board](https://trello.com/b/czxljtcz/project-4-trello)
 
 #### ERD
-![ERD](https://i.imgur.com/BHQWBTM.png)
+[ERD](https://i.imgur.com/BHQWBTM.png)
 
 #### Next Steps
 1. Profile Bio 
