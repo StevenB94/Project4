@@ -26,7 +26,7 @@ This site is for the Dungeons and Dragons player, this site allows you to create
 
 #### Getting Started
 
-[Events With Friends](https://heroeshome.herokuapp.com/login)
+[Heroes Home](https://heroeshome.herokuapp.com/login)
 
 
 #### Wireframe
