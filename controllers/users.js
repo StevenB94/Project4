@@ -15,8 +15,10 @@ module.exports = {
 
 async function updateBio(req, res){
   try{
-    const newProfile = await User.where({ _id: req.user.id }).update({ $set: { bio: req.body.bio }})
+    const newProfile = await User.findOneAndUpdate({_id: req.user._id}, {bio: req.body.bio}, {new: true})
+    console.log(newProfile)
     res.status(200).json({data: newProfile})
+    
   
   } catch(err){
     console.log(err)

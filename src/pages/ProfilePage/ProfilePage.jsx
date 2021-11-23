@@ -24,6 +24,10 @@ export default function ProfilePage(props) {
     getProfile();
   }, [username]);
 
+  function updateUser(user){
+    setUser(user)
+  }
+
   async function getProfile() {
     try {
       const data = await userService.getProfile(username);
@@ -72,7 +76,7 @@ export default function ProfilePage(props) {
     <Grid celled container stackable>
       <Grid.Row columns={1}>
         <Grid.Column>
-          <ProfileBio setUser={setUser} user={props.user} />
+          <ProfileBio updateUser={updateUser} user={user} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row columns={2}>

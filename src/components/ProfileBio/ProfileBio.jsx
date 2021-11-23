@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { Image, Grid, Segment } from "semantic-ui-react";
 import userService from "../../utils/userService";
 
-export default function ProfileBio({ user, setUser }) {
+export default function ProfileBio({ user, updateUser }) {
     const [bio, setBio] = useState("")
     async function submitHandler(){
         console.log("click")
         console.log(bio)
         const data = await userService.updateBio(bio)
         console.log(data)
-        setUser({
+        updateUser({
             ...user,
             bio: bio
         })
-        console.log(user)
+        console.log()
     }
     function changeHandler(e){
         const { value } = e.target
